@@ -34,7 +34,7 @@ class PromoFragment : Fragment() {
         val searchView: TextInputLayout = headerBinding.searchText
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-            searchView.hint = "Caril promo disini..."
+            searchView.hint = "Cari promo disini..."
         }
 
         return root
