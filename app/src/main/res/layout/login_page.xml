@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="36dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Welcome"
+        android:textSize="22sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Masukan \nNomor Telepon"
+        android:textSize="28sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:hint="Kami akan mengirimkan kode konfirmasi"
+        android:textSize="18sp"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/gray"
+        android:padding="10dp"
+        android:hint="Masukan Nomor Telepon"
+        android:inputType="phone"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnLanjutkan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:text="Lanjutkan"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnGuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:text="Login sebagai Tamu"
+        android:textSize="12sp" />
+
+
+</LinearLayout>
