@@ -1,8 +1,7 @@
 package live.neddyap.rutbis
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import live.neddyap.rutbis.R
+import androidx.appcompat.app.AppCompatActivity
 
 class ExploreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
