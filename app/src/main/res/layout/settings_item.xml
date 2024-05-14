@@ -10,6 +10,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/gray"
+        android:paddingVertical="6dp"
+        android:layout_gravity="center"
         android:layout_weight="1"
         android:importantForAccessibility="no" />
 
@@ -25,6 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_gravity="center"
         android:src="@drawable/ic_right"
         android:importantForAccessibility="no" />
 
