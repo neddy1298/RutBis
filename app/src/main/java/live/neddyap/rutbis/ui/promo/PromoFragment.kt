@@ -9,11 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputLayout
 import live.neddyap.rutbis.databinding.FragmentHomeBinding
+import live.neddyap.rutbis.databinding.FragmentPromoBinding
 import live.neddyap.rutbis.databinding.HeaderBinding
 
 class PromoFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentPromoBinding? = null
     private lateinit var headerBinding: HeaderBinding
 
     private val binding get() = _binding!!
@@ -26,7 +27,7 @@ class PromoFragment : Fragment() {
     ): View {
         val viewModel =
             ViewModelProvider(this).get(PromoViewModel::class.java)
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentPromoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         headerBinding = HeaderBinding.bind(binding.root)
