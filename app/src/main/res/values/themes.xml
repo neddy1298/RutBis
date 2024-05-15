@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.RutBis" parent="Base.Theme.RutBis" />
+
+    <style name="AppTheme.NoActionbar" parent="Base.Theme.RutBis">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

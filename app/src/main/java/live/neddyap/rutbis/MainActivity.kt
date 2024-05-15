@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
@@ -59,17 +58,4 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
-
-//    fun loginPage(view: View){
-//        setContentView(R.layout.login_page)
-//    }
-//
-//    fun verificationPage(view: View){
-//        setContentView(R.layout.verification_page)
-//    }
-//
-//    fun homePage(view: View){
-//        val intent = Intent(this, HomeActivity::class.java)
-//        startActivity(intent)
-//    }
 }
