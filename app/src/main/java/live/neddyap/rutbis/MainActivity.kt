@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
 
     lateinit var binding: ActivityMainBinding
-
+    private var mLocationPermissionGranted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+//        setContentView(R.layout.activity_maps)
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
