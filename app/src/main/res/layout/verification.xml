@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Kode sudah dikirim\nnomor telepon Anda"
+            android:text="Kode sudah dikirim\nEmail dan\nnomor telepon Anda"
             android:textSize="28sp" />
 
         <TextView
@@ -31,7 +31,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:gravity="center"
-            android:hint="Ke nomor +62 82125141014"
+            android:hint="Ke email: admin@mail.com"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:hint="Ke nomor: +62 82125141014"
             android:textSize="18sp"
             android:textColor="@color/black" />
 
