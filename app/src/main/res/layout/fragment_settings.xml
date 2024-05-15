@@ -17,11 +17,15 @@
         layout="@layout/settings_item" />
 
     <include
-        android:id="@+id/about_item"
+        android:id="@+id/support_item"
         layout="@layout/settings_item" />
 
     <include
-        android:id="@+id/support_item"
+        android:id="@+id/logout_item"
+        layout="@layout/settings_item" />
+
+    <include
+        android:id="@+id/about_item"
         layout="@layout/settings_item" />
 
 </LinearLayout>

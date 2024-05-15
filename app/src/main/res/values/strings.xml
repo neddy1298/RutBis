@@ -32,5 +32,6 @@
     <string name="favorite">Favorite</string>
     <string name="settings">Settings</string>
     <string name="lokasi_saat_ini">Lokasi saat ini</string>
+    <string name="logout">Logout</string>
 
 </resources>

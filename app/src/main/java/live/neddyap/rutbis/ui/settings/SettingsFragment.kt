@@ -38,6 +38,10 @@ class SettingsFragment : Fragment() {
         supportItemBinding.imageView.setImageResource(R.drawable.ic_support)
         supportItemBinding.textView.text = getString(R.string.support)
 
+        val logoutItemBinding = SettingsItemBinding.bind(root.findViewById(R.id.logout_item))
+        logoutItemBinding.imageView.setImageResource(R.drawable.ic_logout)
+        logoutItemBinding.textView.text = getString(R.string.logout)
+
         return binding.root
     }
 
