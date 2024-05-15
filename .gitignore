@@ -189,3 +189,4 @@ fabric.properties
 caches/
 .tmp
 daemon/8.2
+app/src/main/res/values/api.xml
