@@ -1,6 +1,5 @@
 <resources>
     <string name="appName">RutBis</string>
-
     <string name="backButton">Kembali</string>
 
     <!-- Header -->
@@ -12,11 +11,14 @@
     <!-- Home Page -->
     <string name="user_location">Jl. Jend. Sudirman No. 1, Jakarta</string>
     <string name="search_text">Mau kemana?</string>
+    <string name="lokasi_saat_ini">Lokasi saat ini</string>
 
     <!--  Promo Page  -->
 
-    <!-- Terminal Page -->
-
+    <!-- Explore Page -->
+    <string name="bus_name">Bus Name</string>
+    <string name="terminal_name">Terminal Name</string>
+    <string name="view">Lihat</string>
     <!-- Favorite Page -->
 
     <!-- Settings Page -->
@@ -31,12 +33,8 @@
     <string name="explore">Explore</string>
     <string name="favorite">Favorite</string>
     <string name="settings">Settings</string>
-    <string name="lokasi_saat_ini">Lokasi saat ini</string>
     <string name="logout">Logout</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="by_neddy_ap">By: Neddy AP</string>
-    <string name="terminal_name">Terminal Name</string>
-    <string name="bus_name">Bus Name</string>
-    <string name="view">Lihat</string>
 
 </resources>
