@@ -34,5 +34,6 @@
     <string name="lokasi_saat_ini">Lokasi saat ini</string>
     <string name="logout">Logout</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="by_neddy_ap">By: Neddy AP</string>
 
 </resources>
