@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TabHost
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import live.neddyap.rutbis.R
 import live.neddyap.rutbis.databinding.FragmentExploreBinding
 import live.neddyap.rutbis.databinding.HeaderBinding
 
@@ -33,6 +35,21 @@ class ExploreFragment : Fragment() {
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        // Initialize TabHost
+        val tabHost = binding.exploreTabHost
+        tabHost.setup()
+
+        // Create TabSpec for each tab
+        var spec: TabHost.TabSpec = tabHost.newTabSpec("Tab1")
+        spec.setContent(R.id.busTab)
+        spec.setIndicator("Bus")
+        tabHost.addTab(spec)
+
+        spec = tabHost.newTabSpec("Tab2")
+        spec.setContent(R.id.terminalTab)
+        spec.setIndicator("Terminal")
+        tabHost.addTab(spec)
 
         return root
 
