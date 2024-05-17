@@ -64,7 +64,7 @@ class ExploreFragment : Fragment() {
         tabHost.addTab(spec)
 
 //        busImageList = arrayListOf(R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,)
-        busTitleList = arrayListOf("Bus 1", "Bus 2", "Bus 3", "Bus 4", "Bus 5")
+        busTitleList = arrayListOf("Bus 1", "Bus 2", "Bus 3", "Bus 4", "Bus 5", "Bus 6")
         busRecyclerView = binding.busRecyclerView
         busRecyclerView.layoutManager = LinearLayoutManager(context)
         busRecyclerView.setHasFixedSize(true)
@@ -74,7 +74,7 @@ class ExploreFragment : Fragment() {
 
 
 //        terminalImageList = arrayListOf(R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,)
-        terminalTitleList = arrayListOf("Terminal 1", "Terminal 2", "Terminal 3", "Terminal 4", "Terminal 5")
+        terminalTitleList = arrayListOf("Terminal 1", "Terminal 2", "Terminal 3", "Terminal 4", "Terminal 5", "Terminal 6")
         terminalRecyclerView = binding.terminalRecyclerView
         terminalRecyclerView.layoutManager = LinearLayoutManager(context)
         terminalRecyclerView.setHasFixedSize(true)
