@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -32,10 +33,10 @@ class PromoFragment : Fragment() {
 
         headerBinding = HeaderBinding.bind(binding.root)
         val textView: TextView = headerBinding.headerTitle
-        val searchView: TextInputLayout = headerBinding.searchText
+        val searchView: SearchView = headerBinding.searchText
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-            searchView.hint = "Cari promo disini..."
+            searchView.queryHint = "Cari promo disini..."
         }
 
         return root
