@@ -29,11 +29,14 @@
         android:id="@+id/login_email_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
         android:background="@color/gray"
         android:padding="10dp"
         android:hint="@string/input_email_no_handphone"
         android:inputType="phone"
+        android:drawableStart="@drawable/ic_hashtag"
+        android:drawablePadding="10dp"
         android:textSize="18sp"
         android:autofillHints="password" />
 
@@ -41,10 +44,13 @@
         android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
         android:background="@color/gray"
         android:padding="10dp"
         android:hint="@string/input_password_text"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
         android:textSize="18sp"
         android:autofillHints="password"
         android:inputType="textPassword" />

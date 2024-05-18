@@ -41,6 +41,8 @@
         android:background="@color/gray"
         android:padding="10dp"
         android:hint="@string/input_phone_text"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="10dp"
         android:inputType="phone"
         android:textSize="18sp"
         android:autofillHints="phone" />
@@ -52,6 +54,8 @@
         android:background="@color/gray"
         android:padding="10dp"
         android:hint="@string/input_email_text"
+        android:drawableStart="@drawable/ic_hashtag"
+        android:drawablePadding="10dp"
         android:inputType="textEmailAddress"
         android:textSize="18sp"
         android:autofillHints="emailAddress" />
@@ -63,6 +67,8 @@
         android:background="@color/gray"
         android:padding="10dp"
         android:hint="@string/input_password_text"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
         android:inputType="textVisiblePassword"
         android:textSize="18sp"
         android:autofillHints="password" />
