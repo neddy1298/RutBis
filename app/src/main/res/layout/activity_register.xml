@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Selamat Datang"
+        android:hint="@string/greeting"
         android:textSize="22sp"
         android:textColor="@color/black" />
 
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="Daftar Akun \nUntuk Melanjutkan"
+        android:text="@string/register_to_continue"
         android:textSize="28sp"
         android:textColor="@color/black" />
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:gravity="center"
-        android:hint="Pastikan nomor telepon atau email aktif\nKami akan mengirimkan kode konfirmasi"
+        android:hint="@string/register_description"
         android:textSize="18sp"
         android:textColor="@color/black" />
 
@@ -40,9 +40,10 @@
         android:layout_marginTop="24dp"
         android:background="@color/gray"
         android:padding="10dp"
-        android:hint="Masukan Nomor Telepon"
+        android:hint="@string/input_phone_text"
         android:inputType="phone"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:autofillHints="phone" />
 
     <EditText
         android:layout_width="match_parent"
@@ -50,9 +51,10 @@
         android:layout_marginTop="24dp"
         android:background="@color/gray"
         android:padding="10dp"
-        android:hint="Masukan Email"
-        android:inputType="phone"
-        android:textSize="18sp" />
+        android:hint="@string/input_email_text"
+        android:inputType="textEmailAddress"
+        android:textSize="18sp"
+        android:autofillHints="emailAddress" />
 
     <EditText
         android:layout_width="match_parent"
@@ -60,9 +62,10 @@
         android:layout_marginTop="24dp"
         android:background="@color/gray"
         android:padding="10dp"
-        android:hint="Masukan Password"
-        android:inputType="phone"
-        android:textSize="18sp" />
+        android:hint="@string/input_password_text"
+        android:inputType="textVisiblePassword"
+        android:textSize="18sp"
+        android:autofillHints="password" />
 
     <Button
         android:id="@+id/btnPhoneLogin"
@@ -71,14 +74,14 @@
         android:layout_marginTop="14dp"
         android:backgroundTint="@color/black"
         android:textColor="@color/white"
-        android:text="Daftar"
+        android:text="@string/register_text"
         android:textSize="18sp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="sudah punya akun?"
+            android:text="@string/have_account"
             android:textSize="18sp"/>
 
         <TextView
@@ -86,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:gravity="center"
-            android:text="Login disini"
+            android:text="@string/login_here"
             android:textSize="18sp"
             android:textColor="@color/blue3" />
 

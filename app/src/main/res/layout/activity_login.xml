@@ -21,29 +21,33 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/login"
+        android:text="@string/login_text"
         android:textSize="28sp"
         android:textColor="@color/black" />
 
     <EditText
+        android:id="@+id/login_email_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@color/gray"
         android:padding="10dp"
-        android:hint="@string/masukkan_email_no_handphone"
+        android:hint="@string/input_email_no_handphone"
         android:inputType="phone"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:autofillHints="password" />
 
     <EditText
+        android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@color/gray"
         android:padding="10dp"
         android:hint="@string/input_password_text"
-        android:inputType="phone"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:autofillHints="password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnPhoneLogin"
@@ -52,7 +56,7 @@
         android:layout_marginTop="34dp"
         android:backgroundTint="@color/black"
         android:textColor="@color/white"
-        android:text="@string/login"
+        android:text="@string/login_text"
         android:textSize="18sp" />
 
     <TextView
@@ -60,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:gravity="center"
-        android:text="@string/belum_punya_akun"
+        android:text="@string/dont_have_account_akun"
         android:textSize="18sp"/>
 
     <TextView
@@ -68,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:gravity="center"
-        android:text="@string/daftar_disini"
+        android:text="@string/register_here"
         android:textSize="18sp"
         android:textColor="@color/blue3" />
 

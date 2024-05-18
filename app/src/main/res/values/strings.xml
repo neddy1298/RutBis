@@ -43,10 +43,17 @@
     <string name="busLicense">B 23214 AC</string>
     <string name="brandLicense">AG122</string>
     <string name="greeting">Selamat Datang</string>
-    <string name="login">Login</string>
+    <string name="login_text">Login</string>
     <string name="input_password_text">Masukan Password</string>
-    <string name="belum_punya_akun">belum punya akun?</string>
-    <string name="daftar_disini">Daftar disini</string>
-    <string name="masukkan_email_no_handphone">Masukkan Email / No Handphone</string>
+    <string name="dont_have_account_akun">belum punya akun?</string>
+    <string name="register_here">Daftar disini</string>
+    <string name="input_email_no_handphone">Masukkan Email / No Handphone</string>
+    <string name="register_to_continue">Daftar Akun \nUntuk Melanjutkan</string>
+    <string name="register_description">Pastikan nomor telepon atau email aktif\nKami akan mengirimkan kode konfirmasi</string>
+    <string name="input_phone_text">Masukan Nomor Telepon</string>
+    <string name="input_email_text">Masukkan Email</string>
+    <string name="register_text">Daftar</string>
+    <string name="have_account">sudah punya akun?</string>
+    <string name="login_here">Login disini</string>
 
 </resources>
