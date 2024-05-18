@@ -6,7 +6,7 @@
     android:padding="36dp"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.auth.register.RegisterActivity.">
+    tools:context=".ui.auth.register.RegisterActivity">
 
     <include layout="@layout/auth_header" />
 
