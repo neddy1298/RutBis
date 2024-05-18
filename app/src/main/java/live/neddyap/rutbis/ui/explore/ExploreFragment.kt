@@ -44,17 +44,32 @@ class ExploreFragment : Fragment() {
         _binding = FragmentExploreBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        // Initialize TabHost
+        val tabHost = binding.exploreTabHost
+        tabHost.setup()
+
         headerBinding = HeaderBinding.bind(binding.root)
         val textView: TextView = headerBinding.headerTitle
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
-        // Initialize TabHost
-        val tabHost = binding.exploreTabHost
-        tabHost.setup()
 
-        // Create TabSpec for each tab
+//      TODO: Implement ViewPager2
+//
+//        val viewPager = binding.viewPager
+//        val tabLayout = binding.tabLayout
+//
+//        viewPager.adapter = ViewPagerAdapter(this)
+//
+//        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+//            tab.text = when (position) {
+//                0 -> "Bus"
+//                1 -> "Terminal"
+//                else -> throw IndexOutOfBoundsException()
+//            }
+//        }.attach()
+//
         var spec: TabHost.TabSpec = tabHost.newTabSpec("Tab1")
         spec.setContent(R.id.busTab)
         spec.setIndicator("Bus")
@@ -65,7 +80,7 @@ class ExploreFragment : Fragment() {
         spec.setIndicator("Terminal")
         tabHost.addTab(spec)
 
-//        busImageList = arrayListOf(R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,)
+        busImageList = arrayListOf(R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,)
         busTitleList = arrayListOf("Bus 1", "Bus 2", "Bus 3", "Bus 4", "Bus 5", "Bus 6")
         busRecyclerView = binding.busRecyclerView
         busRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -75,7 +90,7 @@ class ExploreFragment : Fragment() {
 
 
 
-//        terminalImageList = arrayListOf(R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,)
+        terminalImageList = arrayListOf(R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.bus_terminal,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,)
         terminalTitleList = arrayListOf("Terminal 1", "Terminal 2", "Terminal 3", "Terminal 4", "Terminal 5", "Terminal 6")
         terminalRecyclerView = binding.terminalRecyclerView
         terminalRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -89,7 +104,7 @@ class ExploreFragment : Fragment() {
 
     private fun getBusData(){
         for (i in busTitleList.indices) {
-            val dataClass = BusDataClass(busTitleList[i])
+            val dataClass = BusDataClass(busImageList[i] ,busTitleList[i])
             busDataList.add(dataClass)
         }
         busRecyclerView.adapter = BusAdapterClass(busDataList)
@@ -97,7 +112,7 @@ class ExploreFragment : Fragment() {
 
     private fun getTerminalData(){
         for (i in terminalTitleList.indices) {
-            val dataClass = TerminalDataClass(terminalTitleList[i])
+            val dataClass = TerminalDataClass(terminalImageList[i],terminalTitleList[i])
             terminalDataList.add(dataClass)
         }
         terminalRecyclerView.adapter = TerminalAdapterClass(terminalDataList)

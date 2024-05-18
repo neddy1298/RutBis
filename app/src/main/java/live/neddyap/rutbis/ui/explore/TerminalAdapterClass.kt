@@ -3,6 +3,7 @@ package live.neddyap.rutbis.ui.explore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import live.neddyap.rutbis.R
@@ -17,7 +18,7 @@ class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): 
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
         val currentItem = dataList[position]
-//        holder.rvImage.setBackgroundResource(currentItem.dataImage)
+        holder.rvImage.setBackgroundResource(currentItem.dataImage)
         holder.rvTitle.text = currentItem.dataTitle
     }
     override fun getItemCount(): Int {
@@ -26,7 +27,7 @@ class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): 
 
 
     class ViewHolderClass(itemView: View): RecyclerView.ViewHolder(itemView) {
-//        val rvImage : TextView = itemView.findViewById(R.id.terminal_icon)
+        val rvImage : ImageView = itemView.findViewById(R.id.terminal_icon)
         val rvTitle : TextView = itemView.findViewById(R.id.terminal_text)
 
     }
