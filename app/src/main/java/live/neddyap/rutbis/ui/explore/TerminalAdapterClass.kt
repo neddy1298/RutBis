@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import live.neddyap.rutbis.R
+import live.neddyap.rutbis.TerminalDataClass
 
 class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): RecyclerView.Adapter<TerminalAdapterClass.ViewHolderClass>() {
 

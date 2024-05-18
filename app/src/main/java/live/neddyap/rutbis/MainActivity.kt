@@ -2,11 +2,9 @@ package live.neddyap.rutbis
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -14,7 +12,6 @@ import live.neddyap.rutbis.databinding.ActivityMainBinding
 import live.neddyap.rutbis.ui.explore.ExploreFragment
 import live.neddyap.rutbis.ui.favorites.FavoritesFragment
 import live.neddyap.rutbis.ui.home.HomeFragment
-import live.neddyap.rutbis.ui.promo.PromoFragment
 import live.neddyap.rutbis.ui.settings.SettingsFragment
 
 public class MainActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -42,7 +39,7 @@ public class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
 
                 R.id.bottom_promo -> {
-                    replaceFragment(PromoFragment())
+                    replaceFragment(live.neddyap.rutbis.ui.history.HistoryFragment())
                 }
 
                 R.id.bottom_favorite -> {
@@ -62,7 +59,7 @@ public class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         replaceFragment(HomeFragment())
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: androidx.fragment.app.Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
 

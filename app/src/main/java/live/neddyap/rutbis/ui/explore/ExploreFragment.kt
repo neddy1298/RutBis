@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import live.neddyap.rutbis.BusDataClass
 import live.neddyap.rutbis.R
+import live.neddyap.rutbis.TerminalDataClass
 import live.neddyap.rutbis.databinding.FragmentExploreBinding
 import live.neddyap.rutbis.databinding.HeaderBinding
 
@@ -38,7 +40,7 @@ class ExploreFragment : Fragment() {
 
     ): View {
         val viewModel =
-            ViewModelProvider(this).get(ExploreViewModel::class.java)
+            ViewModelProvider(this)[ExploreViewModel::class.java]
         _binding = FragmentExploreBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import live.neddyap.rutbis.BusDataClass
+import live.neddyap.rutbis.HistoryDataClass
 import live.neddyap.rutbis.R
 
 class BusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerView.Adapter<BusAdapterClass.ViewHolderClass>() {

@@ -39,7 +39,7 @@
             android:textSize="12sp"
             app:drawableStartCompat="@drawable/baseline_directions_bus_24" />
 
-        <include layout="@layout/activity_maps" />
+<!--        <include layout="@layout/activity_maps" />-->
 
     </LinearLayout>
 

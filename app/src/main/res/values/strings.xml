@@ -64,5 +64,7 @@
 
 
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="activity_history">Activity</string>
+    <string name="recent_activity">Recent</string>
 
 </resources>
