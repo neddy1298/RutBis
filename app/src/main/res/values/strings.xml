@@ -42,5 +42,11 @@
     <string name="bus_end_time">10:30</string>
     <string name="busLicense">B 23214 AC</string>
     <string name="brandLicense">AG122</string>
+    <string name="greeting">Selamat Datang</string>
+    <string name="login">Login</string>
+    <string name="input_password_text">Masukan Password</string>
+    <string name="belum_punya_akun">belum punya akun?</string>
+    <string name="daftar_disini">Daftar disini</string>
+    <string name="masukkan_email_no_handphone">Masukkan Email / No Handphone</string>
 
 </resources>
