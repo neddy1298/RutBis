@@ -8,31 +8,7 @@
     android:orientation="vertical"
     tools:context=".ui.auth.register.RegisterActivity.">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="@string/greeting"
-        android:textSize="22sp"
-        android:textColor="@color/black" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/register_to_continue"
-        android:textSize="28sp"
-        android:textColor="@color/black" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:gravity="center"
-        android:hint="@string/register_description"
-        android:textSize="18sp"
-        android:textColor="@color/black" />
+    <include layout="@layout/auth_header" />
 
     <EditText
         android:layout_width="match_parent"
@@ -73,30 +49,6 @@
         android:textSize="18sp"
         android:autofillHints="password" />
 
-    <Button
-        android:id="@+id/btnPhoneLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:backgroundTint="@color/black"
-        android:textColor="@color/white"
-        android:text="@string/register_text"
-        android:textSize="18sp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="@string/have_account"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:gravity="center"
-            android:text="@string/login_here"
-            android:textSize="18sp"
-            android:textColor="@color/blue3" />
+    <include layout="@layout/auth_footer" />
 
 </LinearLayout>

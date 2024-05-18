@@ -8,22 +8,7 @@
     android:orientation="vertical"
     tools:context=".ui.auth.login.LoginActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="@string/greeting"
-        android:textSize="22sp"
-        android:textColor="@color/black" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/login_text"
-        android:textSize="28sp"
-        android:textColor="@color/black" />
+    <include layout="@layout/auth_header" />
 
     <EditText
         android:id="@+id/login_email_phone"
@@ -62,7 +47,7 @@
         android:layout_marginTop="34dp"
         android:backgroundTint="@color/black"
         android:textColor="@color/white"
-        android:text="@string/login_text"
+        android:text="@string/auth_button"
         android:textSize="18sp" />
 
     <TextView
@@ -70,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:gravity="center"
-        android:text="@string/dont_have_account_akun"
+        android:text="@string/footer_text_1"
         android:textSize="18sp"/>
 
     <TextView
@@ -78,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:gravity="center"
-        android:text="@string/register_here"
+        android:text="@string/footer_text_2"
         android:textSize="18sp"
         android:textColor="@color/blue3" />
 
