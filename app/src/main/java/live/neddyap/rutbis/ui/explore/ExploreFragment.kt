@@ -30,6 +30,7 @@ class ExploreFragment : Fragment() {
     lateinit var busImageList: ArrayList<Int>
     lateinit var terminalImageList: ArrayList<Int>
 
+    lateinit var busId: ArrayList<String>
     lateinit var busTitleList: ArrayList<String>
     lateinit var terminalTitleList: ArrayList<String>
 
@@ -45,8 +46,9 @@ class ExploreFragment : Fragment() {
         val root: View = binding.root
 
         // Initialize TabHost
-        val tabHost = binding.exploreTabHost
-        tabHost.setup()
+        val tabHost = binding.exploreTabHost.apply {
+            setup()
+        }
 
         headerBinding = HeaderBinding.bind(binding.root)
         val textView: TextView = headerBinding.headerTitle
@@ -82,6 +84,7 @@ class ExploreFragment : Fragment() {
 
         busImageList = arrayListOf(R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,)
         busTitleList = arrayListOf("Bus 1", "Bus 2", "Bus 3", "Bus 4", "Bus 5", "Bus 6")
+        busId = arrayListOf("1","2","3","4","5","6")
         busRecyclerView = binding.busRecyclerView
         busRecyclerView.layoutManager = LinearLayoutManager(context)
         busRecyclerView.setHasFixedSize(true)
@@ -104,7 +107,7 @@ class ExploreFragment : Fragment() {
 
     private fun getBusData(){
         for (i in busTitleList.indices) {
-            val dataClass = BusDataClass(busImageList[i] ,busTitleList[i])
+            val dataClass = BusDataClass(i,busImageList[i] ,busTitleList[i])
             busDataList.add(dataClass)
         }
         busRecyclerView.adapter = BusAdapterClass(busDataList)

@@ -1,5 +1,8 @@
 package live.neddyap.rutbis.ui.explore
 
+import android.content.ContentValues.TAG
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import live.neddyap.rutbis.BusDataClass
 import live.neddyap.rutbis.R
+import live.neddyap.rutbis.ui.explore.bus.BusDetailActivity
 
 class BusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerView.Adapter<BusAdapterClass.ViewHolderClass>() {
 
@@ -20,6 +24,16 @@ class BusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerVi
         val currentItem = dataList[position]
         holder.rvImage.setBackgroundResource(currentItem.dataImage)
         holder.rvTitle.text = currentItem.dataTitle
+
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, BusDetailActivity::class.java)
+            // If you want to pass any data to BusDetailsActivity, you can put them as extras in the intent
+            // For example, if BusDataClass has an id, you can pass it like this:
+            intent.putExtra("BUS_ID", currentItem.busId)
+            Log.i(TAG, "currentItem.busId = ${currentItem.busId}")
+            context.startActivity(intent)
+        }
     }
     override fun getItemCount(): Int {
         return dataList.size
