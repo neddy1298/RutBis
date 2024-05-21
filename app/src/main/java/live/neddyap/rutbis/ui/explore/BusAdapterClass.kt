@@ -31,7 +31,6 @@ class BusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerVi
             // If you want to pass any data to BusDetailsActivity, you can put them as extras in the intent
             // For example, if BusDataClass has an id, you can pass it like this:
             intent.putExtra("BUS_ID", currentItem.busId)
-            Log.i(TAG, "currentItem.busId = ${currentItem.busId}")
             context.startActivity(intent)
         }
     }

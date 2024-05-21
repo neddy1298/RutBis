@@ -20,7 +20,6 @@ class BusDetailActivity : AppCompatActivity() {
         setContentView(R.layout.bus_details)
 
         val busId = intent.getIntExtra("BUS_ID", -1)
-        Log.d(TAG, "onCreate: busId: $busId")
         val stops = busRoutes[busId] ?: listOf("kosong") // Use an empty list as a default value
 
         val recyclerView: RecyclerView = findViewById(R.id.bus_journey_list)
