@@ -14,7 +14,7 @@ import live.neddyap.rutbis.ui.favorites.FavoritesFragment
 import live.neddyap.rutbis.ui.home.HomeFragment
 import live.neddyap.rutbis.ui.settings.SettingsFragment
 
-public class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var bottomNavigationView: BottomNavigationView
 
