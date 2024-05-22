@@ -17,7 +17,7 @@
     <string name="auth_subtitle_1">Subtitle 1</string>
     <string name="auth_title">Auth Title</string>
     <string name="auth_subtitle_2">Subtitle 2</string>
-    <string name="input_email_no_handphone">Enter Email / Phone Number</string>
+    <string name="input_email_phone">Enter Email / Phone Number</string>
     <string name="input_phone_text">Enter Phone Number</string>
     <string name="input_email_text">Enter Email</string>
     <string name="input_password_text">Enter Password</string>

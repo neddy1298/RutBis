@@ -18,7 +18,7 @@
     <string name="auth_subtitle_1">Subjudul 1</string>
     <string name="auth_title">Judul Auth</string>
     <string name="auth_subtitle_2">Subjudul 2</string>
-    <string name="input_email_no_handphone">Masukkan Email / No Handphone</string>
+    <string name="input_email_phone">Masukkan Email / No Handphone</string>
     <string name="input_phone_text">Masukkan Nomor Telepon</string>
     <string name="input_email_text">Masukkan Email</string>
     <string name="input_password_text">Masukkan Password</string>

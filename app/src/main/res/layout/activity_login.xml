@@ -18,7 +18,7 @@
         android:layout_marginTop="24dp"
         android:background="@color/gray"
         android:padding="10dp"
-        android:hint="@string/input_email_no_handphone"
+        android:hint="@string/input_email_phone"
         android:inputType="phone"
         android:drawableStart="@drawable/ic_hashtag"
         android:drawablePadding="10dp"
