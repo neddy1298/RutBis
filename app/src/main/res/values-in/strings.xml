@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appName">RutBis</string>
+    <string name="backButton">Kembali</string>
+
+    <string name="greeting">Selamat Datang</string>
+
+    <!-- SplashScreen -->
+    <string name="by_neddy_ap">By: Neddy AP</string>
+
+    <!-- Header -->
+    <string name="header_title">Judul Header</string>
+    <string name="header_home">Selamat Datang</string>
+    <string name="header_bus">Cari\nBis kamu</string>
+    <string name="header_terminal">Cari\nTerminal Bis</string>
+
+    <!-- Auth -->
+    <string name="auth_subtitle_1">Subjudul 1</string>
+    <string name="auth_title">Judul Auth</string>
+    <string name="auth_subtitle_2">Subjudul 2</string>
+    <string name="input_email_no_handphone">Masukkan Email / No Handphone</string>
+    <string name="input_phone_text">Masukkan Nomor Telepon</string>
+    <string name="input_email_text">Masukkan Email</string>
+    <string name="input_password_text">Masukkan Password</string>
+    <string name="auth_button">Lanjutkan</string>
+    <string name="footer_text_1">Subjudul Footer 1</string>
+    <string name="auth_subButton">Tombol Footer</string>
+    <string name="footer_text_2">Subjudul Footer 2</string>
+    <string name="auth_verification_timer">Kode akan kadaluarsa dalam 01:00</string>
+
+    <!-- Home Frame -->
+    <string name="user_location">Jl. Jend. Sudirman No. 1, Jakarta</string>
+    <string name="search_text">Mau kemana?</string>
+    <string name="lokasi_saat_ini">Lokasi saat ini</string>
+
+    <!-- Promo Frame -->
+
+    <!-- Explore Frame -->
+    <string name="bus_name">Nama Bis</string>
+    <string name="bus_start_time">08:00</string>
+    <string name="bus_start">Mulai Bis</string>
+    <string name="bus_end">Akhir Bis</string>
+    <string name="bus_end_time">10:30</string>
+    <string name="busLicense">B 23214 AC</string>
+    <string name="brandLicense">AG122</string>
+
+    <string name="terminal_name">Nama Terminal</string>
+    <string name="view">Lihat</string>
+    <!-- Favorite Frame -->
+
+    <!-- Settings Frame -->
+    <string name="app_settings">Pengaturan Aplikasi</string>
+    <string name="about">Tentang</string>
+    <string name="user">Pengguna</string>
+    <string name="support">Dukungan Pelanggan</string>
+    <string name="logout">Keluar</string>
+
+    <!-- Navbar -->
+    <string name="home">Beranda</string>
+    <string name="promo">Promo</string>
+    <string name="explore">Jelajah</string>
+    <string name="favorite">Favorit</string>
+    <string name="settings">Pengaturan</string>
+
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="activity_history">Aktivitas</string>
+    <string name="recent_activity">Terbaru</string>
+    <string name="bus_number">Nomor Bis</string>
+    <string name="bus_detail">Detail Bis</string>
+    <string name="bus_brand">Merek Bis</string>
+    <string name="bus_stop">Pemberhentian Bis</string>
+    <string name="select_the_bus">Pilih Bis</string>
+    <string name="bus_price">20.000</string>
+    <string name="bus_journey_time">2,5 Jam</string>
+    <string name="terminal_detail">Detail Terminal</string>
+    <string name="location">Lokasi</string>
+    <string name="terminal_time">04:00 – 23:00</string>
+</resources>
