@@ -31,6 +31,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.explore.bus.BusDetailActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.explore.terminal.TerminalDetailActivity"
             android:exported="false" />
         <activity
             android:name=".MapsActivity"
