@@ -26,8 +26,6 @@ class TerminalBusAdapterClass(private val dataList: ArrayList<BusDataClass>): Re
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, BusDetailActivity::class.java)
-            // If you want to pass any data to BusDetailsActivity, you can put them as extras in the intent
-            // For example, if BusDataClass has an id, you can pass it like this:
             intent.putExtra("BUS_ID", currentItem.busId)
             context.startActivity(intent)
         }

@@ -18,8 +18,8 @@ class TerminalDetailActivity : AppCompatActivity() {
     lateinit var busTitleList: ArrayList<String>
 
     val terminalBusList = hashMapOf(
-        0 to arrayListOf(Pair(R.drawable.ic_bus, "Bus1"), Pair(R.drawable.ic_bus, "Bus2")),
-        1 to arrayListOf(Pair(R.drawable.ic_bus, "Bus3"), Pair(R.drawable.ic_bus, "Bus4"))
+        0 to arrayListOf(Pair(R.drawable.ic_bus_colored, "Bus1"), Pair(R.drawable.ic_bus_colored, "Bus2")),
+        1 to arrayListOf(Pair(R.drawable.ic_bus_colored, "Bus3"), Pair(R.drawable.ic_bus_colored, "Bus4"))
         // Add more terminal bus lists as needed
     )
     override fun onCreate(savedInstanceState: Bundle?) {
