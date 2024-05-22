@@ -14,7 +14,7 @@
         android:drawablePadding="6dp"
         android:minHeight="48dp"
         android:onClick="onBackPressed"
-        android:text="@string/bus_details"
+        android:text="@string/terminal_detail"
         android:textSize="32sp"
         app:drawableStartCompat="@drawable/ic_left" />
 
@@ -31,19 +31,19 @@
         android:layout_marginHorizontal="16dp"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/bus_brand"
+            android:text="@string/terminal_name"
             android:textSize="20sp"
             android:layout_gravity="center"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/bus_number"
+            android:text="@string/location"
             android:textStyle="bold"
             android:gravity="end"
             android:textSize="18sp" />
@@ -55,7 +55,7 @@
         android:layout_marginHorizontal="16dp"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/bus_name"
@@ -63,10 +63,10 @@
             android:layout_gravity="center" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/busLicense"
+            android:text="@string/user_location"
             android:gravity="end"
             android:textSize="18sp" />
     </LinearLayout>
