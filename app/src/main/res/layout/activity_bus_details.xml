@@ -14,7 +14,7 @@
         android:drawablePadding="6dp"
         android:minHeight="48dp"
         android:onClick="onBackPressed"
-        android:text="@string/terminal_detail"
+        android:text="@string/bus_detail"
         android:textSize="32sp"
         app:drawableStartCompat="@drawable/ic_left" />
 
@@ -34,7 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/terminal_name"
+            android:text="@string/bus_name"
             android:textSize="20sp"
             android:layout_gravity="center"
             android:textStyle="bold" />
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/location"
+            android:text="@string/bus_detail"
             android:textStyle="bold"
             android:gravity="end"
             android:textSize="18sp" />
@@ -66,7 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/user_location"
+            android:text="@string/busLicense"
             android:gravity="end"
             android:textSize="18sp" />
     </LinearLayout>
