@@ -67,11 +67,14 @@
     <string name="activity_history">Activity</string>
     <string name="recent_activity">Recent</string>
     <string name="bus_number">Bus Number</string>
-    <string name="bus_details">Bus Detail</string>
+    <string name="bus_detail">Bus Detail</string>
     <string name="bus_brand">Bus Brand</string>
     <string name="bus_stop">Bus Stop</string>
     <string name="select_the_bus">Select The Bus</string>
     <string name="bus_price">20.000</string>
     <string name="bus_journey_time">2,5 Jam</string>
+    <string name="terminal_detail">Terminal Detail</string>
+    <string name="location">Location</string>
+    <string name="terminal_time">04:00 - 23:00</string>
 
 </resources>

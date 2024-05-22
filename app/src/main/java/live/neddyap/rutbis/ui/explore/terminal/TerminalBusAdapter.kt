@@ -1,4 +1,4 @@
-package live.neddyap.rutbis.ui.explore
+package live.neddyap.rutbis.ui.explore.terminal
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import live.neddyap.rutbis.BusDataClass
 import live.neddyap.rutbis.R
-import live.neddyap.rutbis.TerminalDataClass
-import live.neddyap.rutbis.ui.explore.terminal.TerminalDetailActivity
+import live.neddyap.rutbis.ui.explore.bus.BusDetailActivity
 
-class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): RecyclerView.Adapter<TerminalAdapterClass.ViewHolderClass>() {
+class TerminalBusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerView.Adapter<TerminalBusAdapterClass.ViewHolderClass>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_terminal, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_bus, parent, false)
         return ViewHolderClass(itemView)
     }
 
@@ -25,8 +25,10 @@ class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): 
 
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
-            val intent = Intent(context, TerminalDetailActivity::class.java)
-            intent.putExtra("TERMINAL_ID", currentItem.terminalId)
+            val intent = Intent(context, BusDetailActivity::class.java)
+            // If you want to pass any data to BusDetailsActivity, you can put them as extras in the intent
+            // For example, if BusDataClass has an id, you can pass it like this:
+            intent.putExtra("BUS_ID", currentItem.busId)
             context.startActivity(intent)
         }
     }
@@ -36,8 +38,8 @@ class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): 
 
 
     class ViewHolderClass(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val rvImage : ImageView = itemView.findViewById(R.id.terminal_icon)
-        val rvTitle : TextView = itemView.findViewById(R.id.terminal_text)
+        val rvImage : ImageView = itemView.findViewById(R.id.bus_icon)
+        val rvTitle : TextView = itemView.findViewById(R.id.bus_text)
 
     }
 }

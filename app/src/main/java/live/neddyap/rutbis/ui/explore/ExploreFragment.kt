@@ -115,7 +115,7 @@ class ExploreFragment : Fragment() {
 
     private fun getTerminalData(){
         for (i in terminalTitleList.indices) {
-            val dataClass = TerminalDataClass(terminalImageList[i],terminalTitleList[i])
+            val dataClass = TerminalDataClass(i,terminalImageList[i],terminalTitleList[i])
             terminalDataList.add(dataClass)
         }
         terminalRecyclerView.adapter = TerminalAdapterClass(terminalDataList)
