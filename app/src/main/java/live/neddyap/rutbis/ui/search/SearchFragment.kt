@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import live.neddyap.rutbis.databinding.FragmentExploreBinding
 import live.neddyap.rutbis.databinding.FragmentSearchBinding
 import live.neddyap.rutbis.databinding.ItemHeaderBinding
 
@@ -22,7 +21,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val viewModel =
-            ViewModelProvider(this).get(SearchViewModel::class.java)
+            ViewModelProvider(this)[SearchViewModel::class.java]
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
