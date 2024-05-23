@@ -8,7 +8,7 @@
     android:padding="16dp"
     tools:context=".ui.search.SearchFragment">
 
-    <include layout="@layout/header" />
+    <include layout="@layout/item_header" />
 
 
 
