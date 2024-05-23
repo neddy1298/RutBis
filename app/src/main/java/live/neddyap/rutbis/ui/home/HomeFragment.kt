@@ -8,12 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import live.neddyap.rutbis.databinding.FragmentHomeBinding
-import live.neddyap.rutbis.databinding.HeaderBinding
+import live.neddyap.rutbis.databinding.ItemHeaderBinding
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private lateinit var headerBinding: HeaderBinding
+    private lateinit var headerBinding: ItemHeaderBinding
 
     private val binding get() = _binding!!
 
@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        headerBinding = HeaderBinding.bind(binding.root)
+        headerBinding = ItemHeaderBinding.bind(binding.root)
         val textView: TextView = headerBinding.headerTitle
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it

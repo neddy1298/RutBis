@@ -14,12 +14,12 @@ import live.neddyap.rutbis.BusDataClass
 import live.neddyap.rutbis.R
 import live.neddyap.rutbis.TerminalDataClass
 import live.neddyap.rutbis.databinding.FragmentExploreBinding
-import live.neddyap.rutbis.databinding.HeaderBinding
+import live.neddyap.rutbis.databinding.ItemHeaderBinding
 
 class ExploreFragment : Fragment() {
 
     private var _binding: FragmentExploreBinding? = null
-    private lateinit var headerBinding: HeaderBinding
+    private lateinit var headerBinding: ItemHeaderBinding
     private val binding get() = _binding!!
 
     private lateinit var busRecyclerView: RecyclerView
@@ -50,7 +50,7 @@ class ExploreFragment : Fragment() {
             setup()
         }
 
-        headerBinding = HeaderBinding.bind(binding.root)
+        headerBinding = ItemHeaderBinding.bind(binding.root)
         val textView: TextView = headerBinding.headerTitle
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
