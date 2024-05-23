@@ -10,22 +10,22 @@
 
     <include
         android:id="@+id/account_item"
-        layout="@layout/settings_item" />
+        layout="@layout/item_settings" />
 
     <include
         android:id="@+id/app_settings_item"
-        layout="@layout/settings_item" />
+        layout="@layout/item_settings" />
 
     <include
         android:id="@+id/support_item"
-        layout="@layout/settings_item" />
+        layout="@layout/item_settings" />
 
     <include
         android:id="@+id/logout_item"
-        layout="@layout/settings_item" />
+        layout="@layout/item_settings" />
 
     <include
         android:id="@+id/about_item"
-        layout="@layout/settings_item" />
+        layout="@layout/item_settings" />
 
 </LinearLayout>
