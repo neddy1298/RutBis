@@ -11,6 +11,8 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import live.neddyap.rutbis.databinding.FragmentFavoritesBinding
 import live.neddyap.rutbis.ui.FragmentPageAdapter
+import live.neddyap.rutbis.ui.explore.bus.BusFragment
+import live.neddyap.rutbis.ui.explore.terminal.TerminalFragment
 
 class FavoritesFragment : Fragment() {
 
@@ -44,9 +46,11 @@ class FavoritesFragment : Fragment() {
 
         adapter = FragmentPageAdapter(requireActivity().supportFragmentManager, lifecycle)
 
+        adapter.addFragment(BusFragment(), "Bus")
         tabLayout.addTab(tabLayout.newTab().setText("Bus"))
         tabLayout.getTabAt(0)?.contentDescription = "Bus"
 
+        adapter.addFragment(TerminalFragment(), "Terminal")
         tabLayout.addTab(tabLayout.newTab().setText("Terminal"))
         tabLayout.getTabAt(1)?.contentDescription = "Terminal"
 
@@ -66,7 +70,6 @@ class FavoritesFragment : Fragment() {
 
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                tabLayout.selectTab(tabLayout.getTabAt(position))
                 tabLayout.selectTab(tabLayout.getTabAt(position))
             }
         })

@@ -26,7 +26,7 @@ class TerminalFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTerminalBinding.inflate(inflater, container, false)
 
         terminalImageList = arrayListOf(R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.bus_terminal,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,)

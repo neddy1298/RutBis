@@ -26,7 +26,7 @@ class BusFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentBusBinding.inflate(inflater, container, false)
 
         busImageList = arrayListOf(R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,)

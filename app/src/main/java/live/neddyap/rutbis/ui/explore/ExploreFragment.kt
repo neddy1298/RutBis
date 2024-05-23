@@ -12,6 +12,8 @@ import com.google.android.material.tabs.TabLayout
 import live.neddyap.rutbis.databinding.FragmentExploreBinding
 import live.neddyap.rutbis.databinding.ItemHeaderBinding
 import live.neddyap.rutbis.ui.FragmentPageAdapter
+import live.neddyap.rutbis.ui.explore.bus.BusFragment
+import live.neddyap.rutbis.ui.explore.terminal.TerminalFragment
 
 class ExploreFragment : Fragment() {
 
@@ -45,10 +47,11 @@ class ExploreFragment : Fragment() {
 
         adapter = FragmentPageAdapter(requireActivity().supportFragmentManager, lifecycle)
 
-
+        adapter.addFragment(BusFragment(), "Bus")
         tabLayout.addTab(tabLayout.newTab().setText("Bus"))
         tabLayout.getTabAt(0)?.contentDescription = "Bus"
 
+        adapter.addFragment(TerminalFragment(), "Terminal")
         tabLayout.addTab(tabLayout.newTab().setText("Terminal"))
         tabLayout.getTabAt(1)?.contentDescription = "Terminal"
 
@@ -68,7 +71,6 @@ class ExploreFragment : Fragment() {
 
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                tabLayout.selectTab(tabLayout.getTabAt(position))
                 tabLayout.selectTab(tabLayout.getTabAt(position))
             }
         })

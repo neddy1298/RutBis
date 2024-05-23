@@ -4,23 +4,22 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import live.neddyap.rutbis.ui.explore.bus.BusFragment
-import live.neddyap.rutbis.ui.explore.terminal.TerminalFragment
 
-class FragmentPageAdapter(
-    fragmentManager: FragmentManager,
-    lifecycle: Lifecycle
-) : FragmentStateAdapter(fragmentManager, lifecycle) {
+class FragmentPageAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
+
+    private val fragments = ArrayList<Fragment>()
+    private val fragmentTitles = ArrayList<String>()
+
+    fun addFragment(fragment: Fragment, title: String) {
+        fragments.add(fragment)
+        fragmentTitles.add(title)
+    }
 
     override fun getItemCount(): Int {
-        return 2
+        return fragments.size
     }
 
     override fun createFragment(position: Int): Fragment {
-        return if (position == 0){
-            BusFragment()
-        } else {
-            TerminalFragment()
-        }
+        return fragments[position]
     }
 }
