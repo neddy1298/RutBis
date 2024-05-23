@@ -11,7 +11,7 @@ import live.neddyap.rutbis.BusDataClass
 import live.neddyap.rutbis.R
 import live.neddyap.rutbis.ui.explore.bus.BusDetailActivity
 
-class TerminalBusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerView.Adapter<TerminalBusAdapterClass.ViewHolderClass>() {
+class TerminalBusAdapter(private val dataList: ArrayList<BusDataClass>): RecyclerView.Adapter<TerminalBusAdapter.ViewHolderClass>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_bus, parent, false)

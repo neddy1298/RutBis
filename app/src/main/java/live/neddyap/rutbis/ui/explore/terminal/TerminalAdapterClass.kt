@@ -1,4 +1,4 @@
-package live.neddyap.rutbis.ui.explore
+package live.neddyap.rutbis.ui.explore.terminal
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import live.neddyap.rutbis.R
 import live.neddyap.rutbis.TerminalDataClass
-import live.neddyap.rutbis.ui.explore.terminal.TerminalDetailActivity
 
 class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): RecyclerView.Adapter<TerminalAdapterClass.ViewHolderClass>() {
 

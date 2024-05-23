@@ -4,17 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TabHost
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import live.neddyap.rutbis.BusDataClass
-import live.neddyap.rutbis.R
-import live.neddyap.rutbis.TerminalDataClass
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
 import live.neddyap.rutbis.databinding.FragmentExploreBinding
 import live.neddyap.rutbis.databinding.ItemHeaderBinding
+import live.neddyap.rutbis.ui.FragmentPageAdapter
 
 class ExploreFragment : Fragment() {
 
@@ -22,17 +19,9 @@ class ExploreFragment : Fragment() {
     private lateinit var headerBinding: ItemHeaderBinding
     private val binding get() = _binding!!
 
-    private lateinit var busRecyclerView: RecyclerView
-    private lateinit var terminalRecyclerView: RecyclerView
-    private lateinit var busDataList: ArrayList<BusDataClass>
-    private lateinit var terminalDataList: ArrayList<TerminalDataClass>
-
-    lateinit var busImageList: ArrayList<Int>
-    lateinit var terminalImageList: ArrayList<Int>
-
-    lateinit var busId: ArrayList<String>
-    lateinit var busTitleList: ArrayList<String>
-    lateinit var terminalTitleList: ArrayList<String>
+    private lateinit var tabLayout: TabLayout
+    private lateinit var viewPager2: ViewPager2
+    private lateinit var adapter: FragmentPageAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,80 +34,47 @@ class ExploreFragment : Fragment() {
         _binding = FragmentExploreBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Initialize TabHost
-        val tabHost = binding.exploreTabHost.apply {
-            setup()
-        }
-
         headerBinding = ItemHeaderBinding.bind(binding.root)
         val textView: TextView = headerBinding.headerTitle
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
+        tabLayout = binding.exploreTabLayout
+        viewPager2 = binding.exploreViewPager2
 
-//      TODO: Implement ViewPager2
-//
-//        val viewPager = binding.viewPager
-//        val tabLayout = binding.tabLayout
-//
-//        viewPager.adapter = ViewPagerAdapter(this)
-//
-//        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-//            tab.text = when (position) {
-//                0 -> "Bus"
-//                1 -> "Terminal"
-//                else -> throw IndexOutOfBoundsException()
-//            }
-//        }.attach()
-//
-        var spec: TabHost.TabSpec = tabHost.newTabSpec("Tab1")
-        spec.setContent(R.id.busTab)
-        spec.setIndicator("Bus")
-        tabHost.addTab(spec)
-
-        spec = tabHost.newTabSpec("Tab2")
-        spec.setContent(R.id.terminalTab)
-        spec.setIndicator("Terminal")
-        tabHost.addTab(spec)
-
-        busImageList = arrayListOf(R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,R.drawable.ic_bus_colored,)
-        busTitleList = arrayListOf("Bus 1", "Bus 2", "Bus 3", "Bus 4", "Bus 5", "Bus 6")
-        busId = arrayListOf("1","2","3","4","5","6")
-        busRecyclerView = binding.busRecyclerView
-        busRecyclerView.layoutManager = LinearLayoutManager(context)
-        busRecyclerView.setHasFixedSize(true)
-        busDataList = arrayListOf()
-        getBusData()
+        adapter = FragmentPageAdapter(requireActivity().supportFragmentManager, lifecycle)
 
 
+        tabLayout.addTab(tabLayout.newTab().setText("Bus"))
+        tabLayout.getTabAt(0)?.contentDescription = "Bus"
 
-        terminalImageList = arrayListOf(R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,R.drawable.bus_terminal,R.drawable.ic_bus_stop,R.drawable.ic_bus_stop,)
-        terminalTitleList = arrayListOf("Terminal 1", "Terminal 2", "Terminal 3", "Terminal 4", "Terminal 5", "Terminal 6")
-        terminalRecyclerView = binding.terminalRecyclerView
-        terminalRecyclerView.layoutManager = LinearLayoutManager(context)
-        terminalRecyclerView.setHasFixedSize(true)
-        terminalDataList = arrayListOf()
-        getTerminalData()
+        tabLayout.addTab(tabLayout.newTab().setText("Terminal"))
+        tabLayout.getTabAt(1)?.contentDescription = "Terminal"
+
+        viewPager2.adapter = adapter
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                viewPager2.currentItem = tab!!.position
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) { // Do nothing
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) { // Do nothing
+            }
+        })
+
+        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                tabLayout.selectTab(tabLayout.getTabAt(position))
+                tabLayout.selectTab(tabLayout.getTabAt(position))
+            }
+        })
 
         return root
 
-    }
-
-    private fun getBusData(){
-        for (i in busTitleList.indices) {
-            val dataClass = BusDataClass(i,busImageList[i] ,busTitleList[i])
-            busDataList.add(dataClass)
-        }
-        busRecyclerView.adapter = BusAdapterClass(busDataList)
-    }
-
-    private fun getTerminalData(){
-        for (i in terminalTitleList.indices) {
-            val dataClass = TerminalDataClass(i,terminalImageList[i],terminalTitleList[i])
-            terminalDataList.add(dataClass)
-        }
-        terminalRecyclerView.adapter = TerminalAdapterClass(terminalDataList)
     }
 
     override fun onDestroyView() {

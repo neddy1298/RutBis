@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import live.neddyap.rutbis.BusDataClass
 import live.neddyap.rutbis.R
-import live.neddyap.rutbis.ui.explore.BusAdapterClass
+import live.neddyap.rutbis.ui.explore.bus.BusAdapterClass
 
 class TerminalDetailActivity : AppCompatActivity() {
 
@@ -26,9 +26,6 @@ class TerminalDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_terminal_details)
 
-//        val terminalId = intent.getIntExtra("TERMINAL_ID", -1)
-//        val stops = busList[terminalId] ?: listOf("kosong") // Use an empty list as a default value
-
         val terminalId = intent.getIntExtra("TERMINAL_ID", -1)
         val busList = terminalBusList[terminalId] ?: arrayListOf()
 
@@ -39,7 +36,7 @@ class TerminalDetailActivity : AppCompatActivity() {
         terminalBusRecyclerView.layoutManager = LinearLayoutManager(this)
         terminalBusRecyclerView.setHasFixedSize(true)
         terminalBusDataList = arrayListOf()
-        terminalBusRecyclerView.adapter = TerminalBusAdapterClass(terminalBusDataList)
+        terminalBusRecyclerView.adapter = TerminalBusAdapter(terminalBusDataList)
         getBusData()
 
     }

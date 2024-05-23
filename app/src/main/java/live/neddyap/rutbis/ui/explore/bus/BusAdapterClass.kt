@@ -1,8 +1,6 @@
-package live.neddyap.rutbis.ui.explore
+package live.neddyap.rutbis.ui.explore.bus
 
-import android.content.ContentValues.TAG
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import live.neddyap.rutbis.BusDataClass
 import live.neddyap.rutbis.R
-import live.neddyap.rutbis.ui.explore.bus.BusDetailActivity
 
 class BusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerView.Adapter<BusAdapterClass.ViewHolderClass>() {
 
