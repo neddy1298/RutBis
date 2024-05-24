@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/bottom_promo"
-        android:title="@string/promo"
+        android:title="@string/Activity"
         android:icon="@drawable/ic_promo" />
     <item
         android:id="@+id/bottom_explore"

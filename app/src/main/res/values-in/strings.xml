@@ -57,7 +57,7 @@
 
     <!-- Navbar -->
     <string name="home">Beranda</string>
-    <string name="promo">Promo</string>
+    <string name="Activity">Aktivitas</string>
     <string name="explore">Jelajah</string>
     <string name="favorite">Favorit</string>
     <string name="settings">Pengaturan</string>
@@ -75,4 +75,6 @@
     <string name="terminal_detail">Detail Terminal</string>
     <string name="location">Lokasi</string>
     <string name="terminal_time">04:00 – 23:00</string>
+    <string name="bus_search_result">Hasil Bus</string>
+    <string name="terminal_search_result">Hasil Terminal</string>
 </resources>
