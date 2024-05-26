@@ -77,4 +77,8 @@
     <string name="terminal_time">04:00 – 23:00</string>
     <string name="bus_search_result">Hasil Bus</string>
     <string name="terminal_search_result">Hasil Terminal</string>
+    <string name="bus_journey">Rute Bis</string>
+    <string name="terminal_bus_available">Bis Tersedia</string>
+    <string name="search_result">Hasil Pencarian</string>
+    <string name="search">"Cari: "</string>
 </resources>

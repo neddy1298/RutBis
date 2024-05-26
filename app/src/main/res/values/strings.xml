@@ -76,5 +76,9 @@
     <string name="terminal_time">04:00 – 23:00</string>
     <string name="bus_search_result">Bus Result</string>
     <string name="terminal_search_result">Terminal Result</string>
+    <string name="bus_journey">Bus Route</string>
+    <string name="terminal_bus_available">Bus Available</string>
+    <string name="search_result">Search Result</string>
+    <string name="search">Search:</string>
 
 </resources>
