@@ -36,6 +36,9 @@
             android:name=".ui.explore.terminal.TerminalDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.search.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
