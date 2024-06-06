@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import live.neddyap.rutbis.data.bus.Bus
+import live.neddyap.rutbis.data.terminal.Terminal
 import live.neddyap.rutbis.databinding.FragmentExploreBinding
 import live.neddyap.rutbis.databinding.ItemHeaderBinding
 import live.neddyap.rutbis.ui.FragmentPageAdapter
@@ -39,8 +40,10 @@ class ExploreFragment : Fragment() {
     ): View {
 
         val buses: List<Bus> = arguments?.getSerializable("buses") as List<Bus>
+        val terminals: List<Terminal> = arguments?.getSerializable("terminals") as List<Terminal>
 
         Log.i(TAG, "busDataExplore: $buses")
+        Log.i(TAG, "terminalDataExplore: $terminals")
 
         val viewModel =
             ViewModelProvider(this)[ExploreViewModel::class.java]

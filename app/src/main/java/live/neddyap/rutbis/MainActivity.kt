@@ -17,6 +17,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import live.neddyap.rutbis.data.bus.Bus
 import live.neddyap.rutbis.data.bus.BusInterface
+import live.neddyap.rutbis.data.terminal.Terminal
+import live.neddyap.rutbis.data.terminal.TerminalInterface
 import live.neddyap.rutbis.databinding.ActivityMainBinding
 import live.neddyap.rutbis.ui.explore.ExploreFragment
 import live.neddyap.rutbis.ui.favorites.FavoritesFragment
@@ -74,7 +76,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 R.id.bottom_explore -> {
                     GlobalScope.launch {
                         val busesResponse = getBuses()
-                        replaceFragment(ExploreFragment(), busesResponse)
+                        val terminalsResponse = getTerminals()
+                        replaceFragment(ExploreFragment(), busesResponse, terminalsResponse)
                     }
                 }
 
@@ -87,12 +90,19 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         replaceFragment(HomeFragment())
     }
 
-    private fun replaceFragment(fragment: androidx.fragment.app.Fragment, data: List<Bus>? = null) {
-        data?.let {
-            val bundle = Bundle()
+    private fun replaceFragment(
+        fragment: androidx.fragment.app.Fragment,
+        busData: List<Bus>? = null,
+        terminalData: List<Terminal>? = null
+    ) {
+        val bundle = Bundle()
+        busData?.let {
             bundle.putSerializable("buses", ArrayList(it))
-            fragment.arguments = bundle
         }
+        terminalData?.let {
+            bundle.putSerializable("terminals", ArrayList(it))
+        }
+        fragment.arguments = bundle
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
 
@@ -105,7 +115,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     suspend fun getBuses(): List<Bus> {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -148,6 +157,49 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             Log.d(ContentValues.TAG, "busData: ${bus.updatedAt}")
         } catch (e: Exception) {
             Log.e(ContentValues.TAG, "busData-e: ${e.message}")
+        }
+    }
+    suspend fun getTerminals(): List<Terminal> {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(TerminalInterface::class.java)
+
+        return withContext(IO) {
+            try {
+                val terminalsResponse = retrofit.getTerminals()
+                Log.d(ContentValues.TAG, "terminalData: ${terminalsResponse.status}")
+                Log.d(ContentValues.TAG, "terminalData: ${terminalsResponse.code}")
+
+                terminalsResponse.data
+            } catch (e: Exception) {
+                Log.e(ContentValues.TAG, "terminalData-e: ${e.message}")
+                emptyList<Terminal>()
+            }
+        }
+    }
+
+    fun getTeminal(id: String) {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(TerminalInterface::class.java)
+
+        try {
+            val response = retrofit.getTerminal(id)
+            val terminal = response.data
+            Log.d(ContentValues.TAG, "terminalData: ${terminal.terminalId}")
+            Log.d(ContentValues.TAG, "terminalData: ${terminal.terminalName}")
+            Log.d(ContentValues.TAG, "terminalData: ${terminal.terminalImage}")
+            Log.d(ContentValues.TAG, "terminalData: ${terminal.createdAt}")
+            Log.d(ContentValues.TAG, "terminalData: ${terminal.updatedAt}")
+
+        } catch (e: Exception) {
+            Log.e(ContentValues.TAG, "terminalData-e: ${e.message}")
         }
     }
 }
