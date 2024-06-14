@@ -1,6 +1,7 @@
 package live.neddyap.rutbis
 
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -59,6 +60,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
+        Log.i(TAG, "bus icon: ${R.drawable.ic_bus_colored}")
+        Log.i(TAG, "terminal icon: ${R.drawable.ic_bus_stop}")
+        Log.i(TAG, "user icon: ${R.drawable.ic_user}")
+
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.bottom_home -> {
@@ -79,6 +84,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                         val terminalsResponse = getTerminals()
                         replaceFragment(ExploreFragment(), busesResponse, terminalsResponse)
                     }
+                    replaceFragment(ExploreFragment())
                 }
 
                 R.id.bottom_settings -> {
@@ -97,10 +103,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     ) {
         val bundle = Bundle()
         busData?.let {
-            bundle.putSerializable("buses", ArrayList(it))
+            bundle.putParcelableArrayList("buses", ArrayList(it))
         }
         terminalData?.let {
-            bundle.putSerializable("terminals", ArrayList(it))
+            bundle.putParcelableArrayList("terminals", ArrayList(it))
         }
         fragment.arguments = bundle
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()

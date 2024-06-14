@@ -3,6 +3,7 @@ package live.neddyap.rutbis.ui.explore
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -39,8 +40,8 @@ class ExploreFragment : Fragment() {
 
     ): View {
 
-        val buses: List<Bus> = arguments?.getSerializable("buses") as List<Bus>
-        val terminals: List<Terminal> = arguments?.getSerializable("terminals") as List<Terminal>
+        val buses: List<Bus>? = arguments?.getParcelableArrayList("buses")
+        val terminals: List<Terminal>? = arguments?.getParcelableArrayList("terminals")
 
         Log.i(TAG, "busDataExplore: $buses")
         Log.i(TAG, "terminalDataExplore: $terminals")
@@ -73,11 +74,22 @@ class ExploreFragment : Fragment() {
 
         adapter = FragmentPageAdapter(requireActivity().supportFragmentManager, lifecycle)
 
-        adapter.addFragment(BusFragment(), "Bus")
+        val busFragment = BusFragment().apply {
+            arguments = Bundle().apply {
+                putParcelableArrayList("buses", buses as ArrayList<out Parcelable>?)
+            }
+        }
+        adapter.addFragment(busFragment, "Bus")
         tabLayout.addTab(tabLayout.newTab().setText("Bus"))
         tabLayout.getTabAt(0)?.contentDescription = "Bus"
 
-        adapter.addFragment(TerminalFragment(), "Terminal")
+        val terminalFragment = TerminalFragment().apply {
+            arguments = Bundle().apply {
+                putParcelableArrayList("terminals", terminals as ArrayList<out Parcelable>?)
+            }
+        }
+
+        adapter.addFragment(terminalFragment, "Terminal")
         tabLayout.addTab(tabLayout.newTab().setText("Terminal"))
         tabLayout.getTabAt(1)?.contentDescription = "Terminal"
 
@@ -116,6 +128,8 @@ class ExploreFragment : Fragment() {
         // Start SearchActivity
         startActivity(intent)
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -8,9 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import live.neddyap.rutbis.R
-import live.neddyap.rutbis.TerminalDataClass
+import live.neddyap.rutbis.data.terminal.Terminal
 
-class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): RecyclerView.Adapter<TerminalAdapterClass.ViewHolderClass>() {
+class TerminalAdapterClass(private val terminalList: List<Terminal>): RecyclerView.Adapter<TerminalAdapterClass.ViewHolderClass>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_terminal, parent, false)
@@ -18,9 +18,9 @@ class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): 
     }
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-        val currentItem = dataList[position]
-        holder.rvImage.setBackgroundResource(currentItem.dataImage)
-        holder.rvTitle.text = currentItem.dataTitle
+        val currentItem = terminalList[position]
+        holder.rvImage.setBackgroundResource(currentItem.terminalIcon)
+        holder.rvTitle.text = currentItem.terminalName
 
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
@@ -30,7 +30,7 @@ class TerminalAdapterClass(private val dataList: ArrayList<TerminalDataClass>): 
         }
     }
     override fun getItemCount(): Int {
-        return dataList.size
+        return terminalList.size
     }
 
 

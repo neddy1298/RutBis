@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import live.neddyap.rutbis.BusDataClass
 import live.neddyap.rutbis.R
+import live.neddyap.rutbis.data.bus.Bus
 
-class BusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerView.Adapter<BusAdapterClass.ViewHolderClass>() {
+class BusAdapterClass(private val busList: List<Bus>): RecyclerView.Adapter<BusAdapterClass.ViewHolderClass>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_bus, parent, false)
@@ -18,21 +18,19 @@ class BusAdapterClass(private val dataList: ArrayList<BusDataClass>): RecyclerVi
     }
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-        val currentItem = dataList[position]
-        holder.rvImage.setBackgroundResource(currentItem.dataImage)
-        holder.rvTitle.text = currentItem.dataTitle
+        val currentItem = busList[position]
+        holder.rvImage.setBackgroundResource(currentItem.busIcon)
+        holder.rvTitle.text = currentItem.busName
 
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, BusDetailActivity::class.java)
-            // If you want to pass any data to BusDetailsActivity, you can put them as extras in the intent
-            // For example, if BusDataClass has an id, you can pass it like this:
             intent.putExtra("BUS_ID", currentItem.busId)
             context.startActivity(intent)
         }
     }
     override fun getItemCount(): Int {
-        return dataList.size
+        return busList.size
     }
 
 

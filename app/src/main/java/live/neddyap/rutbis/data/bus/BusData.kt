@@ -1,16 +1,18 @@
 package live.neddyap.rutbis.data.bus
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Bus(
     val busId: String,
     val busLicense: String,
     val busName: String,
-    val busIcon: String,
+    val busIcon: Int,
     val busImage: String,
     val createdAt: String,
     val updatedAt: String
-): Serializable
+): Parcelable
 
 data class BusResponse(
     val code: Int,
