@@ -25,6 +25,13 @@
         app:tabIndicatorFullWidth="true"
         />
 
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/exploreViewPager2"
         android:layout_width="match_parent"
