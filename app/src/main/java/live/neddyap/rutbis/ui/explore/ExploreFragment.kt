@@ -1,10 +1,8 @@
 package live.neddyap.rutbis.ui.explore
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,9 +40,6 @@ class ExploreFragment : Fragment() {
 
         val buses: List<Bus>? = arguments?.getParcelableArrayList("buses")
         val terminals: List<Terminal>? = arguments?.getParcelableArrayList("terminals")
-
-        Log.i(TAG, "busDataExplore: $buses")
-        Log.i(TAG, "terminalDataExplore: $terminals")
 
         val viewModel =
             ViewModelProvider(this)[ExploreViewModel::class.java]

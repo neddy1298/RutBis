@@ -1,6 +1,5 @@
 package live.neddyap.rutbis
 
-import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -59,10 +58,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
-
-        Log.i(TAG, "bus icon: ${R.drawable.ic_bus_colored}")
-        Log.i(TAG, "terminal icon: ${R.drawable.ic_bus_stop}")
-        Log.i(TAG, "user icon: ${R.drawable.ic_user}")
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -132,12 +127,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         return withContext(IO) {
             try {
                 val busesResponse = retrofit.getBuses()
-                Log.d(ContentValues.TAG, "busData: ${busesResponse.status}")
-                Log.d(ContentValues.TAG, "busData: ${busesResponse.code}")
-
                 busesResponse.data
             } catch (e: Exception) {
-                Log.e(ContentValues.TAG, "busData-e: ${e.message}")
+                Log.e(TAG, "busData-e: ${e.message}")
                 emptyList<Bus>()
             }
         }
@@ -154,12 +146,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         return withContext(IO) {
             try {
                 val terminalsResponse = retrofit.getTerminals()
-                Log.d(ContentValues.TAG, "terminalData: ${terminalsResponse.status}")
-                Log.d(ContentValues.TAG, "terminalData: ${terminalsResponse.code}")
-
                 terminalsResponse.data
             } catch (e: Exception) {
-                Log.e(ContentValues.TAG, "terminalData-e: ${e.message}")
+                Log.e(TAG, "terminalData-e: ${e.message}")
                 emptyList<Terminal>()
             }
         }
