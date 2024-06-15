@@ -143,28 +143,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    fun getBus(id: String) {
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(BusInterface::class.java)
-
-        try {
-            val response = retrofit.getBus(id)
-            val bus = response.data
-            Log.d(ContentValues.TAG, "busData: ${bus.busId}")
-            Log.d(ContentValues.TAG, "busData: ${bus.busLicense}")
-            Log.d(ContentValues.TAG, "busData: ${bus.busName}")
-            Log.d(ContentValues.TAG, "busData: ${bus.busIcon}")
-            Log.d(ContentValues.TAG, "busData: ${bus.busImage}")
-            Log.d(ContentValues.TAG, "busData: ${bus.createdAt}")
-            Log.d(ContentValues.TAG, "busData: ${bus.updatedAt}")
-        } catch (e: Exception) {
-            Log.e(ContentValues.TAG, "busData-e: ${e.message}")
-        }
-    }
     suspend fun getTerminals(): List<Terminal> {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -184,28 +162,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 Log.e(ContentValues.TAG, "terminalData-e: ${e.message}")
                 emptyList<Terminal>()
             }
-        }
-    }
-
-    fun getTeminal(id: String) {
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(TerminalInterface::class.java)
-
-        try {
-            val response = retrofit.getTerminal(id)
-            val terminal = response.data
-            Log.d(ContentValues.TAG, "terminalData: ${terminal.terminalId}")
-            Log.d(ContentValues.TAG, "terminalData: ${terminal.terminalName}")
-            Log.d(ContentValues.TAG, "terminalData: ${terminal.terminalImage}")
-            Log.d(ContentValues.TAG, "terminalData: ${terminal.createdAt}")
-            Log.d(ContentValues.TAG, "terminalData: ${terminal.updatedAt}")
-
-        } catch (e: Exception) {
-            Log.e(ContentValues.TAG, "terminalData-e: ${e.message}")
         }
     }
 }

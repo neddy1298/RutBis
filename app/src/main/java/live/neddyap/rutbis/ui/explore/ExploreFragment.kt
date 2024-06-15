@@ -112,20 +112,13 @@ class ExploreFragment : Fragment() {
                 tabLayout.selectTab(tabLayout.getTabAt(position))
             }
         })
-
-
         return root
-
     }
 
     private fun search(query: String?) {
-        // Create an Intent to start SearchActivity
         val intent = Intent(activity, SearchActivity::class.java).apply {
-            // Pass the query as an extra
             putExtra("query", query)
         }
-
-        // Start SearchActivity
         startActivity(intent)
     }
 

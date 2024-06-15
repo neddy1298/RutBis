@@ -18,7 +18,7 @@
             android:importantForAccessibility="no" />
 
         <TextView
-            android:id="@+id/stop_name"
+            android:id="@+id/terminal_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
