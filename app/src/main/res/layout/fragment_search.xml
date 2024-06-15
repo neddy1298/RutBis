@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         android:drawablePadding="6dp"
         android:minHeight="48dp"
-        android:onClick="onBackPressed"
+        android:onClick="back"
         android:text="@string/search_result"
         android:textSize="32sp"
         app:drawableStartCompat="@drawable/ic_left" />

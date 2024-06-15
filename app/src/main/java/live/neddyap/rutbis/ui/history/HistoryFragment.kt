@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import live.neddyap.rutbis.HistoryDataClass
 import live.neddyap.rutbis.databinding.FragmentHistoryBinding
-import live.neddyap.rutbis.ui.history.HistoryAdapterClass
 
 class HistoryFragment : Fragment() {
 
@@ -18,11 +17,11 @@ class HistoryFragment : Fragment() {
     private lateinit var historyRecyclerView: RecyclerView
     private lateinit var historyDataList: ArrayList<HistoryDataClass>
 
-    lateinit var historyDateList: ArrayList<String>
-    lateinit var historyBusStartList: ArrayList<String>
-    lateinit var historyBusEndList: ArrayList<String>
-    lateinit var historyTimeStartList: ArrayList<String>
-    lateinit var historyTimeEndList: ArrayList<String>
+    private lateinit var historyDateList: ArrayList<String>
+    private lateinit var historyBusStartList: ArrayList<String>
+    private lateinit var historyBusEndList: ArrayList<String>
+    private lateinit var historyTimeStartList: ArrayList<String>
+    private lateinit var historyTimeEndList: ArrayList<String>
 
     private val binding get() = _binding!!
 

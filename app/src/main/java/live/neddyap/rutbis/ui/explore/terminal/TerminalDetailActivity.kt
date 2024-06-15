@@ -45,10 +45,6 @@ class TerminalDetailActivity : AppCompatActivity() {
         }
     }
 
-    fun onBackPressed(view: View) {
-        finish()
-    }
-
     private suspend fun getJourneysForTerminal(busId: String): JourneysResponse? {
         return withContext(Dispatchers.IO) {
             try {
@@ -58,5 +54,9 @@ class TerminalDetailActivity : AppCompatActivity() {
                 null
             }
         }
+    }
+
+    fun back(view: View) {
+        finish()
     }
 }

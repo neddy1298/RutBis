@@ -55,7 +55,7 @@ class BusDetailActivity : AppCompatActivity() {
         }
     }
 
-    fun onBackPressed(view: View) {
+    fun back(view: View) {
         finish()
     }
 }

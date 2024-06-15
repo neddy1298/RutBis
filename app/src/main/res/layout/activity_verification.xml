@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -27,7 +28,8 @@
             android:textColor="@color/gray"
             android:textColorHint="@color/gray"
             android:textSize="38sp"
-            android:autofillHints="code_1" />
+            android:autofillHints="code_1"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/verification_code_2"
@@ -43,7 +45,8 @@
             android:textColorHint="@color/gray"
             android:textSize="38sp"
             android:layout_toEndOf="@id/verification_code_1"
-            android:autofillHints="code_2" />
+            android:autofillHints="code_2"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/verification_code_3"
@@ -59,7 +62,8 @@
             android:textColorHint="@color/gray"
             android:textSize="38sp"
             android:layout_toEndOf="@id/verification_code_2"
-            android:autofillHints="code_3" />
+            android:autofillHints="code_3"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/verification_code_4"
@@ -74,7 +78,8 @@
             android:textColorHint="@color/gray"
             android:textSize="38sp"
             android:layout_toEndOf="@id/verification_code_3"
-            android:autofillHints="code_4" />
+            android:autofillHints="code_4"
+            tools:ignore="LabelFor" />
 
     </RelativeLayout>
 
