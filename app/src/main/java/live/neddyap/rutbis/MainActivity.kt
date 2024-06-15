@@ -1,6 +1,6 @@
 package live.neddyap.rutbis
 
-import android.content.ContentValues.TAG
+import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -20,14 +20,11 @@ import live.neddyap.rutbis.data.bus.BusInterface
 import live.neddyap.rutbis.data.terminal.Terminal
 import live.neddyap.rutbis.data.terminal.TerminalInterface
 import live.neddyap.rutbis.databinding.ActivityMainBinding
+import live.neddyap.rutbis.network.ApiModule
 import live.neddyap.rutbis.ui.explore.ExploreFragment
 import live.neddyap.rutbis.ui.favorites.FavoritesFragment
 import live.neddyap.rutbis.ui.home.HomeFragment
 import live.neddyap.rutbis.ui.settings.SettingsFragment
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -38,19 +35,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private var mLocationPermissionGranted = false
     private lateinit var mMap: GoogleMap
 
-
-    val BASE_URL = "http://10.0.2.2:8080/api/"
-
-    val headerInterceptor = Interceptor { chain ->
-        val request = chain.request().newBuilder()
-            .addHeader("X-Api-Key", "rutbis123")
-            .build()
-        chain.proceed(request)
+    private val busService: BusInterface by lazy {
+        ApiModule.provideRetrofit().create(BusInterface::class.java)
     }
-    val client = OkHttpClient.Builder()
-        .addInterceptor(headerInterceptor)
-        .build()
 
+    private val terminalService: TerminalInterface by lazy {
+        ApiModule.provideRetrofit().create(TerminalInterface::class.java)
+    }
     @DelicateCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,40 +107,26 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
-    suspend fun getBuses(): List<Bus> {
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(BusInterface::class.java)
-
-        return withContext(IO) {
+    private suspend fun getBuses(): List<Bus>? {
+        return withContext(Dispatchers.IO) {
             try {
-                val busesResponse = retrofit.getBuses()
+                val busesResponse = busService.getBuses()
                 busesResponse.data
             } catch (e: Exception) {
-                Log.e(TAG, "busData-e: ${e.message}")
-                emptyList<Bus>()
+                Log.e(ContentValues.TAG, "Error fetching journeys: ${e.message}")
+                null
             }
         }
     }
 
-    suspend fun getTerminals(): List<Terminal> {
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(TerminalInterface::class.java)
-
-        return withContext(IO) {
+    private suspend fun getTerminals(): List<Terminal>? {
+        return withContext(Dispatchers.IO) {
             try {
-                val terminalsResponse = retrofit.getTerminals()
+                val terminalsResponse = terminalService.getTerminals()
                 terminalsResponse.data
             } catch (e: Exception) {
-                Log.e(TAG, "terminalData-e: ${e.message}")
-                emptyList<Terminal>()
+                Log.e(ContentValues.TAG, "Error fetching journeys: ${e.message}")
+                null
             }
         }
     }

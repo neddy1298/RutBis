@@ -33,13 +33,6 @@ class BusFragment : Fragment() {
         return binding.root
     }
 
-//    private fun getBusData(){
-//        for (i in busTitleList.indices) {
-//            val dataClass = BusDataClass(i,busImageList[i] ,busTitleList[i])
-//            busDataList.add(dataClass)
-//        }
-//    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
