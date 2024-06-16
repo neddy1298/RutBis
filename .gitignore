@@ -189,3 +189,4 @@ fabric.properties
 caches/
 .tmp
 daemon/
+/kotlin-profile/2024-06-06-11-37-05-556.profile
