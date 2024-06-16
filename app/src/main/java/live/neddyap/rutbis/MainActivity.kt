@@ -1,8 +1,6 @@
 package live.neddyap.rutbis
 
-import android.content.ContentValues
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -11,16 +9,9 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import live.neddyap.rutbis.data.bus.Bus
-import live.neddyap.rutbis.data.bus.BusInterface
 import live.neddyap.rutbis.data.terminal.Terminal
-import live.neddyap.rutbis.data.terminal.TerminalInterface
 import live.neddyap.rutbis.databinding.ActivityMainBinding
-import live.neddyap.rutbis.network.ApiModule
 import live.neddyap.rutbis.ui.explore.ExploreFragment
 import live.neddyap.rutbis.ui.favorites.FavoritesFragment
 import live.neddyap.rutbis.ui.home.HomeFragment
@@ -35,13 +26,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private var mLocationPermissionGranted = false
     private lateinit var mMap: GoogleMap
 
-    private val busService: BusInterface by lazy {
-        ApiModule.provideRetrofit().create(BusInterface::class.java)
-    }
-
-    private val terminalService: TerminalInterface by lazy {
-        ApiModule.provideRetrofit().create(TerminalInterface::class.java)
-    }
     @DelicateCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,11 +49,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
 
                 R.id.bottom_explore -> {
-                    GlobalScope.launch {
-                        val busesResponse = getBuses()
-                        val terminalsResponse = getTerminals()
-                        replaceFragment(ExploreFragment(), busesResponse, terminalsResponse)
-                    }
                     replaceFragment(ExploreFragment())
                 }
 
@@ -105,29 +84,5 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-    }
-
-    private suspend fun getBuses(): List<Bus>? {
-        return withContext(Dispatchers.IO) {
-            try {
-                val busesResponse = busService.getBuses()
-                busesResponse.data
-            } catch (e: Exception) {
-                Log.e(ContentValues.TAG, "Error fetching journeys: ${e.message}")
-                null
-            }
-        }
-    }
-
-    private suspend fun getTerminals(): List<Terminal>? {
-        return withContext(Dispatchers.IO) {
-            try {
-                val terminalsResponse = terminalService.getTerminals()
-                terminalsResponse.data
-            } catch (e: Exception) {
-                Log.e(ContentValues.TAG, "Error fetching journeys: ${e.message}")
-                null
-            }
-        }
     }
 }
