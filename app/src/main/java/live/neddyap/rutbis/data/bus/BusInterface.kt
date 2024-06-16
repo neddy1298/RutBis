@@ -9,6 +9,6 @@ interface BusInterface {
     suspend fun getBuses(): BusesResponse
 
     @GET("bus/{bus_id}")
-    fun getBus(@Path("bus_id") id: String): BusResponse
+    suspend fun getBus(@Path("bus_id") id: String): BusResponse
 
 }

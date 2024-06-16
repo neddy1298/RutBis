@@ -9,6 +9,6 @@ interface TerminalInterface {
     suspend fun getTerminals(): TerminalsResponse
 
     @GET("terminal/{terminal_id}")
-    fun getTerminal(@Path("terminal_id") id: String): TerminalResponse
+    suspend fun getTerminal(@Path("terminal_id") id: String): TerminalResponse
 
 }

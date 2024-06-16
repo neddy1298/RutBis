@@ -81,7 +81,7 @@ class ExploreFragment : Fragment() {
         viewPager2 = binding.exploreViewPager2
         adapter = FragmentPageAdapter(requireActivity().supportFragmentManager, lifecycle)
 
-        binding.loadingProgressBar.visibility = View.VISIBLE // Show ProgressBar
+        binding.loadingProgressBar.visibility = View.VISIBLE
 
         viewLifecycleOwner.lifecycleScope.launch {
             val buses = getBuses()
